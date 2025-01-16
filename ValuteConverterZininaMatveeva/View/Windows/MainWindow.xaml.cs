@@ -40,9 +40,11 @@ namespace ValuteConverterZininaMatveeva
 
         }
 
-        private void UpdateCourseBtn_Click(object sender, RoutedEventArgs e)
+        private async void UpdateCourseBtn_Click(object sender, RoutedEventArgs e)
         {
-            _currencyService.LoadCurrencyAsync(CurrencyLV);
+            await _currencyService.LoadCurrencyAsync(CurrencyLV);
+            _currencyService.LoadValutes(SellCmb);
+            _currencyService.LoadValutes(PurchaseCmb);
         }
 
         private void ConvertBtn_Click(object sender, RoutedEventArgs e)
